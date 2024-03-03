@@ -4,15 +4,28 @@ import Home from "./pages/Home";
 import Events from "./pages/Events";
 import About from "./pages/About";
 import Menu from "./pages/Menu";
-import Login from "./pages/Login";
-import { LoginLayout } from "./layouts/LoginLayout";
+import { Cards } from "./components/constants/PizzasData";
+import { createContext, useState } from "react";
 
+export const ShopContext = createContext('')
 
 export const App =() => {
-  
+  const [pizza, setPizza] = useState(Cards)
+  const [cart, setCart] = useState({
+    itemsAmount: 0,
+    totalPrice: 0,
+  })
+
+  const ctxObject = {
+    cart,
+    setCart,
+    pizza,
+    setPizza,
+  }
 
   return (
     <>
+    <ShopContext.Provider value={ctxObject}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Home />}/>
@@ -21,11 +34,8 @@ export const App =() => {
           <Route path="/about" element={<About />}/>
         </Route>
       </Routes>
-      <Routes>
-        <Route path="/login" element={<LoginLayout />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
-      </Routes>
+    </ShopContext.Provider>
+      
     </>
   )
 }

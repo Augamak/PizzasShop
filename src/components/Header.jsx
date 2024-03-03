@@ -15,7 +15,7 @@ const Header = () => {
             <div className="header-right">
                 <Link className="header-button" to="/login">Log in</Link>
                 <div>
-                    <img className="cart" src=".public/assets/images/cart.png.png" alt="" />
+                    <img className="cart" src="./assets/images/Cart.png" alt="" />
                 </div>
             </div>
             
