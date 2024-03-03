@@ -24,6 +24,14 @@ export const Menu = () => {
                         return <CardsComponent key={product.model} product={product} />
                     })}
                 </div>
+                <div className="most-popular">
+                    <h2>MOST POPULAR PIZZA</h2>
+                </div>
+                <div className="pizzas-cards">
+                    {pizza.map((product) => {
+                        return <CardsComponent key={product.model} product={product} />
+                    })}
+                </div>
             </div>
             
             

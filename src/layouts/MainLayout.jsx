@@ -8,7 +8,21 @@ export const MainLayout = () => {
                 <Header />
             </header>
             <main>{<Outlet />}</main>
-            <footer>Footer</footer>
+            <footer>
+                <div>
+                    <logo>pizzashop</logo>
+                    <div>
+                        <ul>home
+                            <li>To Order</li>
+                            <li>About us</li>
+                            <li>Evenst</li>
+                            <li>Menu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+            </footer>
         </>
     )
 }
