@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const Header = () => {
+    
     return (
         <div className="header-container">
             <a href="#" className="logo">pizzashop</a>
@@ -12,7 +13,7 @@ const Header = () => {
                 <Link className="header-style" to="/about">About Us</Link>
             </div>
             <div className="header-right">
-                <button className="header-button">Log in</button>
+                <Link className="header-button" to="/login">Log in</Link>
                 <div>
                     <img className="cart" src=".public/assets/images/cart.png.png" alt="" />
                 </div>
