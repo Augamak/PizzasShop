@@ -44,7 +44,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
-        image: './public/assets/images/cheese.png',
+        image: './public/assets/images/argentina.png',
         name: 'Argentina',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
         size1: '22',
@@ -55,8 +55,8 @@ export const Cards = [
         button: 'Order Now',
     },
     {
-        image: './public/assets/images/cheese.png',
-        name: 'Gribnays',
+        image: './public/assets/images/grybnaja.png',
+        name: 'Gribnaya',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
         size1: '22',
         size2: '28',
@@ -66,7 +66,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
-        image: './public/assets/images/cheese.png',
+        image: './public/assets/images/tomato.png',
         name: 'Tomato',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
         size1: '22',
@@ -77,7 +77,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
-        image: './public/assets/images/cheese.png',
+        image: './public/assets/images/italianx2.png',
         name: 'Italian x2',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
         size1: '22',

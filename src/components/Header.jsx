@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { ShopContext } from "../App";
+import { useContext } from "react";
 
 
 const Header = () => {
-    
+    const {cart} = useContext(ShopContext)
+    console.log(cart)
     return (
         <div className="header-container">
             <a href="#" className="logo">pizzashop</a>
@@ -14,8 +17,9 @@ const Header = () => {
             </div>
             <div className="header-right">
                 <Link className="header-button" to="/login">Log in</Link>
-                <div>
-                    <img className="cart" src="./assets/images/Cart.png" alt="" />
+                <div className="cart-block">
+                    <img className="cart" src="./assets/images/Cart.png" alt="cart" />
+                    <div className="quantity-product">{cart.itemsAmount}</div>
                 </div>
             </div>
             
