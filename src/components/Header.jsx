@@ -24,7 +24,7 @@ const Header = () => {
                     {cartOpen && (
                         <div className="shop-cart">
                             <div>
-                                <img src={"./public/assets/images" + cart.image} />{}
+                                <img src={ cart.image} />
                             </div>
                             <div className="quantity-product-cart">{cart.itemsAmount}</div>
                             <div className="quantity-product-cart">{cart.totalPrice} $</div>

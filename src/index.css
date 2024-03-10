@@ -234,9 +234,13 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 20px;
   line-height: 22px;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .categories-text:hover {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

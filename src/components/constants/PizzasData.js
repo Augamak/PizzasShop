@@ -1,5 +1,6 @@
 export const Cards = [
     {
+        category: 'Meat',
         image: './public/assets/images/italian.png',
         name: 'Italian',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -10,7 +11,8 @@ export const Cards = [
         price: '8.35',
         button: 'Order Now',
     },
-    {
+    {   
+        category: 'Meat',
         image: './public/assets/images/venecia.png',
         name: 'Venecia',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -22,6 +24,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Meat',
         image: './public/assets/images/meat.png',
         name: 'Meat',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -33,6 +36,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Vegetarian',
         image: './public/assets/images/cheese.png',
         name: 'Cheese',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -44,6 +48,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Sea Products',
         image: './public/assets/images/argentina.png',
         name: 'Argentina',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -55,6 +60,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Mushroom',
         image: './public/assets/images/grybnaja.png',
         name: 'Gribnaya',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -66,6 +72,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Vegetarian',
         image: './public/assets/images/tomato.png',
         name: 'Tomato',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
@@ -77,6 +84,7 @@ export const Cards = [
         button: 'Order Now',
     },
     {
+        category: 'Meat',
         image: './public/assets/images/italianx2.png',
         name: 'Italian x2',
         ingrediants: 'Filling: onion, potato, tomato, mushrooms, cheese, olives, meat',
