@@ -18,6 +18,7 @@
   gap: 50px;
   font-size: 24px;
   padding: 48px 129px;
+  position: relative;
 
 }
 
@@ -536,7 +537,7 @@ b {
   gap: 25px;
 }
 
-.bout-iamges {
+.about-images {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -616,4 +617,25 @@ b {
   background-clip: text;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   -webkit-text-fill-color: transparent;
+}
+
+.shop-cart {
+  position: absolute;
+  top: 130px;
+  right: 90px;
+  width: 450px;
+  min-height: 200px;
+  background: linear-gradient(215.37deg, rgb(255, 100, 50),rgb(255, 162, 40));
+  border: 2px solid rgb(239, 80, 6);
+  border-radius: 30px;
+  display: flex;
+  gap: 60px;
+}
+
+.quantity-product-cart {
+  border-color: rgb(255, 100, 50);
+  color: white;
+  background-clip:
+  text;
+  font-size: 40px;
 }

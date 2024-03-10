@@ -7,6 +7,8 @@ export const CardsComponent = (props) => {
 
     const {setCart} = useContext(ShopContext)
     const [amount, setAmount] = useState(0);
+    const  {image} = useState ()
+    console.log (image)
 
     const minusHandler = () => {
         if (amount == 0) return
@@ -19,6 +21,7 @@ export const CardsComponent = (props) => {
         setCart((prev) => {
             return {
                 ...prev,
+                image: prev.image + image,
                 itemsAmount: prev.itemsAmount + amount,
                 totalPrice: prev.totalPrice + amount * props.product.price, 
             }

@@ -7,7 +7,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '8,35',
+        price: '8.35',
         button: 'Order Now',
     },
     {
@@ -18,7 +18,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '7,35',
+        price: '7.35',
         button: 'Order Now',
     },
     {
@@ -29,7 +29,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '9,35',
+        price: '9.35',
         button: 'Order Now',
     },
     {
@@ -40,7 +40,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '8,35',
+        price: '8.35',
         button: 'Order Now',
     },
     {
@@ -51,7 +51,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '7,35',
+        price: '7.35',
         button: 'Order Now',
     },
     {
@@ -62,7 +62,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '6,35',
+        price: '6.35',
         button: 'Order Now',
     },
     {
@@ -73,7 +73,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '7,35',
+        price: '7.35',
         button: 'Order Now',
     },
     {
@@ -84,7 +84,7 @@ export const Cards = [
         size2: '28',
         size3: '33',
         addIngredients: '+ Ingredients',
-        price: '8,35',
+        price: '8.35',
         button: 'Order Now',
     },
 ]

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchArticles } from './thunks';
+
 
 const initialState = {
     login: 'admin',

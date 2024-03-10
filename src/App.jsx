@@ -12,8 +12,9 @@ export const ShopContext = createContext('')
 export const App =() => {
   const [pizza, setPizza] = useState(Cards)
   const [cart, setCart] = useState({
+    image: '',
     itemsAmount: 0,
-    totalPrice: 0,
+    totalPrice: 0.0,
   })
 
   const ctxObject = {

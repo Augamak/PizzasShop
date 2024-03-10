@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { ShopContext } from "../App";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const Header = () => {
     const {cart} = useContext(ShopContext)
-    console.log(cart)
+    const [cartOpen, setCartOpen] = useState()
+
     return (
         <div className="header-container">
             <a href="#" className="logo">pizzashop</a>
@@ -18,8 +19,18 @@ const Header = () => {
             <div className="header-right">
                 <Link className="header-button" to="/login">Log in</Link>
                 <div className="cart-block">
-                    <img className="cart" src="./assets/images/Cart.png" alt="cart" />
+                    <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(cartOpen === cartOpen)}/>
                     <div className="quantity-product">{cart.itemsAmount}</div>
+                    {cartOpen && (
+                        <div className="shop-cart">
+                            <div>
+                                <img src={"./public/assets/images" + cart.image} />{}
+                            </div>
+                            <div className="quantity-product-cart">{cart.itemsAmount}</div>
+                            <div className="quantity-product-cart">{cart.totalPrice} $</div>
+                        </div>    
+                    )}
+                    
                 </div>
             </div>
             
