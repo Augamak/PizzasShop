@@ -9,7 +9,7 @@ function Buttons ({menuItems, filterItems, setItems}) {
                         Show All
                     </button>
                 {
-                menuItems.map(val => (
+                menuItems.map((val) => (
                     <button className="categories-text"
                     onClick={() => filterItems(val)}>
                         {val}

@@ -1,14 +1,16 @@
+import React from "react"
 import { useState, useContext } from "react";
 import { ShopContext } from "../../App";
 
 
-
-export const CardsComponent = (props) => {
+const Card = ({item}) => {
 
     const {setCart} = useContext(ShopContext)
     const [amount, setAmount] = useState(0);
-    const  {image} = useState ()
+    const  {image} = useState ('')
     console.log (image)
+
+    
 
     const minusHandler = () => {
         if (amount == 0) return
@@ -23,35 +25,43 @@ export const CardsComponent = (props) => {
                 ...prev,
                 image: prev.image + image,
                 itemsAmount: prev.itemsAmount + amount,
-                totalPrice: prev.totalPrice + amount * props.product.price, 
+                totalPrice: prev.totalPrice +  val.price, 
             }
 
         })
         setAmount (0)
     }
     
-
     return (
-        <div className="cards-post">
-            <img className="card-img" src={props.product.image}></img>
-            <p className="pizza-name">{props.product.name}</p>
-            <p className="model">{props.product.ingrediants}</p>
-            <div className="pizza-size">
-                <p className="size-of-pizza">{props.product.size1}</p>
-                <p className="size-of-pizza">{props.product.size2}</p>
-                <p className="size-of-pizza">{props.product.size3}</p>
+        <div className="pizzas-cards">
+            <div className="pizzas-cards">
+                {item.map((val) => (
+                    <div  key={val.id}>
+                        <div className="cards-post ">
+                            <img className="card-img" src={val.image}></img>
+                            <p className="pizza-name">{val.name}</p>
+                            <p className="model">{val.ingrediants}</p>
+                            <div className="pizza-size">
+                                <p className="size-of-pizza">{val.size1}</p>
+                                <p className="size-of-pizza">{val.size2}</p>
+                                <p className="size-of-pizza">{val.size3}</p>
+                            </div>
+                            <p className="ingredients">{val.addIngredients}</p>
+                            <div className="card-price">
+                                <p className="price">{val.price}<b>$</b></p>
+                                <div className="card-counter">
+                                    <button className="handler minus" onClick={minusHandler}>-</button>
+                                    <div className="amount">{amount}</div>
+                                    <button className="handler plus" onClick={plusHandler}>+</button>
+                                </div>
+                            </div>
+                            <button className="cartButton" onClick={addToCartHandler}>{val.button}</button>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <p className="ingredients">{props.product.addIngredients}</p>
-            <div className="card-price">
-                <p className="price">{props.product.price}<b>$</b></p>
-                <div className="card-counter">
-                    <button className="handler minus" onClick={minusHandler}>-</button>
-                    <div className="amount">{amount}</div>
-                    <button className="handler plus" onClick={plusHandler}>+</button>
-                </div>
-            </div>
-            <button className="cartButton" onClick={addToCartHandler}>{props.product.button}</button>
-        </div>
-        
+        </div>    
     )
 }
+
+export default Card

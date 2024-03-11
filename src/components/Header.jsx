@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ShopContext } from "../App";
 import { useContext, useState } from "react";
+import { ShopContext } from "../App";
 
 
 const Header = () => {
     const {cart} = useContext(ShopContext)
-    const [cartOpen, setCartOpen] = useState()
+    const [cartOpen, setCartOpen] = useState(false)
 
     return (
         <div className="header-container">
@@ -19,7 +19,7 @@ const Header = () => {
             <div className="header-right">
                 <Link className="header-button" to="/login">Log in</Link>
                 <div className="cart-block">
-                    <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(cartOpen === cartOpen)}/>
+                    <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(!cartOpen)}/>
                     <div className="quantity-product">{cart.itemsAmount}</div>
                     {cartOpen && (
                         <div className="shop-cart">

@@ -10,7 +10,7 @@ import { createContext, useState } from "react";
 export const ShopContext = createContext('')
 
 export const App =() => {
-  const [pizza, setPizza] = useState(Cards)
+  const [item, setItems] = useState(Cards)
   const [cart, setCart] = useState({
     image: '',
     itemsAmount: 0,
@@ -20,8 +20,8 @@ export const App =() => {
   const ctxObject = {
     cart,
     setCart,
-    pizza,
-    setPizza,
+    item,
+    setItems,
   }
 
   return (
