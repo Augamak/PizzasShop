@@ -6,11 +6,14 @@ const initialState = {
     pasword: 'admin'
 };
 
-export const counterSlice = createSlice({
-
-  initialState
+export const usersSlice = createSlice({
+  name: "usersStore",
+  initialState,
+  reducers: {
+    
+  }
   
 });
 
-export const { addNewArticle } = counterSlice.actions;
-export default counterSlice.reducer;
+export const {  } = usersSlice.actions;
+export default usersSlice.reducer;
