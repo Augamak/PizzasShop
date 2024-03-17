@@ -7,6 +7,7 @@ const Header = () => {
     const {cart} = useContext(ShopContext)
     const [cartOpen, setCartOpen] = useState(false)
 
+
     return (
         <div className="header-container">
             <a href="#" className="logo">pizzashop</a>
@@ -30,7 +31,6 @@ const Header = () => {
                             <div className="quantity-product-cart">{cart.totalPrice} $</div>
                         </div>    
                     )}
-                    
                 </div>
             </div>
             

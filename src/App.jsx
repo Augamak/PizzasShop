@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Menu from "./pages/Menu";
 import { Cards } from "./components/constants/PizzasData";
 import { createContext, useState } from "react";
+import Login from "./pages/Login";
 
 export const ShopContext = createContext('')
 
@@ -33,6 +34,7 @@ export const App =() => {
           <Route path="menu" element={<Menu />}/>
           <Route path="/events" element={<Events />}/>
           <Route path="/about" element={<About />}/>
+          <Route path="/login" element={<Login />}/>
         </Route>
       </Routes>
     </ShopContext.Provider>

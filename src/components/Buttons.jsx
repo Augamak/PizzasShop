@@ -9,8 +9,8 @@ function Buttons ({menuItems, filterItems, setItems}) {
                         Show All
                     </button>
                 {
-                menuItems.map((val) => (
-                    <button className="categories-text"
+                menuItems.map((val, idx) => (
+                    <button key={idx} className="categories-text"
                     onClick={() => filterItems(val)}>
                         {val}
                     </button>

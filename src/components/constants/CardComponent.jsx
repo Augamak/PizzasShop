@@ -35,8 +35,8 @@ const Card = ({item}) => {
     return (
         <div className="pizzas-cards">
             <div className="pizzas-cards">
-                {item.map((val) => (
-                    <div  key={val.id}>
+                {item.map((val, idx) => (
+                    <div  key={idx}>
                         <div className="cards-post ">
                             <img className="card-img" src={val.image}></img>
                             <p className="pizza-name">{val.name}</p>

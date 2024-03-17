@@ -6,8 +6,6 @@ function BackButton() {
     const backToList = () => 
     navigate("/", { state: { hello: "hello" } });
     
-
-
     return (
         <h1 className="back-to-list" onClick={backToList}>Back to list</h1>    
     )

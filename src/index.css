@@ -70,8 +70,13 @@
   cursor: pointer;
 }
 
+.back-button {
+  display: flex;
+  justify-content: space-between;
+}
+
 .login {
-  margin: 100px;
+  margin: 130px;
 }
 
 .login-block {
