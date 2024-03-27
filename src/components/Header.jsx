@@ -6,6 +6,15 @@ import { ShopContext } from "../App";
 const Header = () => {
     const {cart} = useContext(ShopContext)
     const [cartOpen, setCartOpen] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState (true)
+
+    const loginUser = () => {
+        setIsLoggedIn(true)
+    }
+    
+    const logoutUser = () => {
+        setIsLoggedIn(false)
+    }
 
 
     return (
@@ -18,7 +27,11 @@ const Header = () => {
                 <Link className="header-style" to="/about">About Us</Link>
             </div>
             <div className="header-right">
-                <Link className="header-button" to="/login">Log in</Link>
+                { isLoggedIn ? 
+                    <Link className="header-button" to="/login" onClick={logoutUser}>Log in</Link> :
+                    <Link className="header-button" to="/login" onClick={loginUser}>Log out</Link>
+                }
+                
                 <div className="cart-block">
                     <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(!cartOpen)}/>
                     <div className="quantity-product">{cart.itemsAmount}</div>

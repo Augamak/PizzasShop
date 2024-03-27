@@ -1,25 +1,22 @@
 import { useRef, useState } from "react";
 import BackButton from "../components/BackButton";
-import login from "../store/slices/login";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const [showLogin, setShowLogin] = useState(true)
 
-    const login = useRef(null);
-    const pass = useRef(null);
+    const navigate = useNavigate()
+    const {login, password} = useSelector((state) => state.user)
 
-    const initialState = {
-        login: 'admin',
-        password: 'admin',
-        isLogedIn: false
-    };
+    const loginInput = useRef(null);
+    const passInput = useRef(null);
 
     const checkPass = () => {
         if (
-            login.current.value === initialState.value && 
-            pass.current.value === initialState.password 
+            loginInput.current.value === login && 
+            passInput.current.value === password 
         ) {
-            setShowLogin(false);
+            navigate('/')
         } else {
             alert("Wrong password!!")
         }
@@ -33,16 +30,16 @@ return (
             <input className="login-input" 
                 placeholder="Login" 
                 type="text"
-                ref={login}
+                ref={loginInput}
             />
             <input className="login-input" 
                 placeholder="Password" 
                 type="password" 
                 name="a" 
                 id="aaa"
-                ref={pass} 
+                ref={passInput} 
             />
-            <button className="login-button" onClick={checkPass} >Log in</button>
+            <button className="login-button" onClick={checkPass}>Log in</button>
         </div>
         <div className="back-button">
             <BackButton />
