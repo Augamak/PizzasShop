@@ -16,11 +16,14 @@ export const cartSlice = createSlice({
         return obj.price * obj.count + sum
         }, 0)
     },
+    removeItem(state, action) {
+        state.items = state.items.filter((obj) => obj.id === action)
+    },
     clearItems(state) {
         state.items = []
     }
   }
 });
 
-export const { addItem, clearItems } = cartSlice.actions;
+export const { addItem, removeItem, clearItems } = cartSlice.actions;
 export default cartSlice.reducer;
