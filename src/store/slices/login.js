@@ -11,15 +11,15 @@ export const loginSlice = createSlice({
   name: "loginStore",
   initialState,
   reducers: {
-    login: (state) => {
+    loginHandler: (state) => {
       state.isLoggedIn = true;
     },
-    logout: (state) => {
+    logoutHandler: (state) => {
       state.isLoggedIn = false;
     }
   }
   
 });
 
-export const { login, logout } = loginSlice.actions;
+export const { loginHandler, logoutHandler } = loginSlice.actions;
 export default loginSlice.reducer;

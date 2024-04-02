@@ -1,14 +1,23 @@
 import React from "react"
-import { useState, useContext } from "react";
-import { ShopContext } from "../../App";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../store/slices/cart";
 
 
-const Card = ({item}) => {
 
-    const {setCart} = useContext(ShopContext)
+const Card = ({item, name, image}) => {
+
     const [amount, setAmount] = useState(0);
-    const  {image} = useState ('')
-    console.log (image)
+    const dispatch = useDispatch ();
+    
+    const onClickAdd = () => {
+        const item = {
+            name, 
+            image
+        }
+        dispatch(addItem(item))
+    }
+
 
     
 
@@ -19,18 +28,8 @@ const Card = ({item}) => {
     const plusHandler = () => {
         setAmount(amount + 1)
     }
-    const addToCartHandler = () => {
-        setCart((prev) => {
-            return {
-                ...prev,
-                image: prev.image + image,
-                itemsAmount: prev.itemsAmount + amount,
-                totalPrice: prev.totalPrice +  val.price, 
-            }
+    
 
-        })
-        setAmount (0)
-    }
     
     return (
         <div className="pizzas-cards">
@@ -55,7 +54,7 @@ const Card = ({item}) => {
                                     <button className="handler plus" onClick={plusHandler}>+</button>
                                 </div>
                             </div>
-                            <button className="cartButton" onClick={addToCartHandler}>{val.button}</button>
+                            <button className="cartButton" onClick={onClickAdd}>{val.button}</button>
                         </div>
                     </div>
                 ))}

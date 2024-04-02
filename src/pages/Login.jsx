@@ -1,12 +1,15 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import BackButton from "../components/BackButton";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { loginHandler } from "../store/slices/login"
 
 const Login = () => {
 
-    const navigate = useNavigate()
-    const {login, password} = useSelector((state) => state.user)
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const {login, password} = useSelector((state) => state.user);
 
     const loginInput = useRef(null);
     const passInput = useRef(null);
@@ -16,6 +19,7 @@ const Login = () => {
             loginInput.current.value === login && 
             passInput.current.value === password 
         ) {
+            dispatch(loginHandler())
             navigate('/')
         } else {
             alert("Wrong password!!")

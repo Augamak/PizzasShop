@@ -1,19 +1,26 @@
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-import { ShopContext } from "../App";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutHandler } from "../store/slices/login";
 
 
 const Header = () => {
-    const {cart} = useContext(ShopContext)
     const [cartOpen, setCartOpen] = useState(false)
-    const [isLoggedIn, setIsLoggedIn] = useState (true)
+    const { isLoggedIn } = useSelector((state) => state.user);
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { items, totalPrice } = useSelector ((state) => state.cart)
+    console.log(typeof totalPrice)
+    const products = useSelector((state) => state.cart.items)
 
-    const loginUser = () => {
-        setIsLoggedIn(true)
+
+    const logoutManager = () => {
+        dispatch(logoutHandler())
+        navigate("/")
     }
-    
-    const logoutUser = () => {
-        setIsLoggedIn(false)
+
+    const loginManager = () => {
+        navigate("login")
     }
 
 
@@ -23,27 +30,43 @@ const Header = () => {
             <div className="header-links">
                 <Link className="header-style" to="/">Home</Link>
                 <Link className="header-style" to="/menu">Menu</Link>
+                {
+                    isLoggedIn && 
+                    <Link className="header-style" to="/addNewPizza">Add new pizza</Link>
+                }
                 <Link className="header-style" to="/events">Events</Link>
                 <Link className="header-style" to="/about">About Us</Link>
             </div>
             <div className="header-right">
                 { isLoggedIn ? 
-                    <Link className="header-button" to="/login" onClick={logoutUser}>Log in</Link> :
-                    <Link className="header-button" to="/login" onClick={loginUser}>Log out</Link>
+                    <button className="header-button" to="/login" onClick={logoutManager}>Log out</button> :
+                    <button className="header-button" to="/login" onClick={loginManager}>Log in</button>
                 }
                 
                 <div className="cart-block">
                     <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(!cartOpen)}/>
-                    <div className="quantity-product">{cart.itemsAmount}</div>
+                    <div className="cart-items">{items.length}</div>
+                    <div className="cart-items">{totalPrice}</div>
+                    <div className="quantity-product"></div>
                     {cartOpen && (
                         <div className="shop-cart">
-                            <div>
-                                <img src={ cart.image} />
-                            </div>
-                            <div className="quantity-product-cart">{cart.itemsAmount}</div>
-                            <div className="quantity-product-cart">{cart.totalPrice} $</div>
+                            {
+                                products.map((val, idy) => (
+                                    <div className="cart-style" key={idy}>
+                                            <div className="cart-items">
+                                                <img style={{width: '100px', height: '100px'}}  src={val.image} alt="" />
+                                            </div>
+                                            <div className="cart-items">{val.name}</div>
+                                            
+                                    </div>
+                                ))
+                            }
+                            <div className="cart-items">{totalPrice}</div>
+                            
                         </div>    
                     )}
+
+                   
                 </div>
             </div>
             
