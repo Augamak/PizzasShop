@@ -1,26 +1,30 @@
-import  Card  from "../components/constants/CardComponent";
+import  Card  from "../components/constants/PizzasCard";
 import { useState } from "react";
 import { Cards } from "../components/constants/PizzasData";
 import Buttons from "../components/Buttons";
 
 export const Menu = () => {
     
-    const [item, setItems]= useState(Cards)
-    const menuItems = [...new Set(Cards.map((val) => val.category ))]
+    const [pizzaCards, setPizzaCards]= useState(Cards)
+    const menuItems = [...new Set(Cards.map((card) => card.category ))]
 
-    const filterItems = (cat) => {
+    const filterPizzas = (cat) => {
     const newItems = Cards.filter((newval) => newval.category === cat)
-    setItems(newItems)
+    setPizzaCards(newItems)
   }
     return (
         <>
             <div className="menu-container">
                 <h1 className="menu-text">Menu</h1>
                 <Buttons menuItems = {menuItems} 
-                filterItems={filterItems}
-                setItems={setItems}
+                filterPizzas={filterPizzas}
+                setPizzaCards={setPizzaCards}
                 />
-                <Card item={item}/>
+                <div className="pizzas-cards">
+                    {pizzaCards.map((pizzaCard) => {
+                        return <Card key={pizzaCard.id} card={pizzaCard} />
+                    })}
+                </div>
                 <div className="most-popular">
                     <h2>MOST POPULAR PIZZA</h2>
                 </div>

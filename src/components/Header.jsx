@@ -5,14 +5,17 @@ import { logoutHandler } from "../store/slices/login";
 
 
 const Header = () => {
-    const [cartOpen, setCartOpen] = useState(false)
     const { isLoggedIn } = useSelector((state) => state.user);
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const { items, totalPrice } = useSelector ((state) => state.cart)
     console.log(typeof totalPrice)
     const products = useSelector((state) => state.cart.items)
+    const [isOpen, setIsOpen] = useState(false);
 
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
     const logoutManager = () => {
         dispatch(logoutHandler())
@@ -22,7 +25,12 @@ const Header = () => {
     const loginManager = () => {
         navigate("login")
     }
+   
 
+   
+
+
+   
 
     return (
         <div className="header-container">
@@ -44,11 +52,11 @@ const Header = () => {
                 }
                 
                 <div className="cart-block">
-                    <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={() => setCartOpen(!cartOpen)}/>
+                    <img className="cart" src="./assets/images/Cart.png" alt="cart" onClick={toggleMenu}/>
                     <div className="cart-items">{items.length}</div>
                     <div className="cart-items">{totalPrice}</div>
                     <div className="quantity-product"></div>
-                    {cartOpen && (
+                    {isOpen && (
                         <div className="shop-cart">
                             {
                                 products.map((val, idy) => (
